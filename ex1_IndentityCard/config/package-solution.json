@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ex-1-indentity-card-client-side-solution",
+    "id": "5fb6e446-3f69-483f-95f9-c250e3b2cc57",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/ex-1-indentity-card.sppkg"
+  }
+}

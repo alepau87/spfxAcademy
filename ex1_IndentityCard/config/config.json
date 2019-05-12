@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "identity-card-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/identityCard/IdentityCardWebPart.js",
+          "manifest": "./src/webparts/identityCard/IdentityCardWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "IdentityCardWebPartStrings": "lib/webparts/identityCard/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}
