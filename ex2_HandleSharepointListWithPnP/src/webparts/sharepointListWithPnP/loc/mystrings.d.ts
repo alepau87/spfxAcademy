@@ -1,7 +1,7 @@
 declare interface ISharepointListWithPnPWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  ListUrlField: string;
+  ListField: string;
 }
 
 declare module 'SharepointListWithPnPWebPartStrings' {

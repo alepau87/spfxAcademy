@@ -12,7 +12,7 @@ import SharepointListWithPnP from './components/SharepointListWithPnP';
 import { ISharepointListWithPnPProps } from './components/ISharepointListWithPnPProps';
 
 export interface ISharepointListWithPnPWebPartProps {
-  ListUrl: string;
+  ListTitle: string;
 }
 
 export default class SharepointListWithPnPWebPart extends BaseClientSideWebPart<ISharepointListWithPnPWebPartProps> {
@@ -21,7 +21,7 @@ export default class SharepointListWithPnPWebPart extends BaseClientSideWebPart<
     const element: React.ReactElement<ISharepointListWithPnPProps> = React.createElement(
       SharepointListWithPnP,
       {
-        ListUrl: this.properties.ListUrl
+        ListTitle: this.properties.ListTitle
       }
     );
 
@@ -47,8 +47,8 @@ export default class SharepointListWithPnPWebPart extends BaseClientSideWebPart<
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('ListUrl', {
-                  label: strings.ListUrlField
+                PropertyPaneTextField('ListTitle', {
+                  label: strings.ListField
                 })
               ]
             }
