@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "sharepoint-list-with-pn-p-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sharepointListWithPnP/SharepointListWithPnPWebPart.js",
+          "manifest": "./src/webparts/sharepointListWithPnP/SharepointListWithPnPWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SharepointListWithPnPWebPartStrings": "lib/webparts/sharepointListWithPnP/loc/{locale}.js"
+  }
+}
