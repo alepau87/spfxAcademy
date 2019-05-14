@@ -12,6 +12,10 @@ import { BookModel } from '../Model/BookModel';
 export interface IDetailsListState {
   items: BookModel[];
   panelOpen: boolean;
+  Title: string;
+  Autore: string;
+  Anno: string;
+  Pagine: string;
 }
 
 
@@ -22,7 +26,7 @@ export default class SharepointListWithPnP extends React.Component<ISharepointLi
   constructor(contextProps: ISharepointListWithPnPProps) {
     super(null);
 
-    this.state = { items: [], panelOpen: false };
+    this.state = { items: [], panelOpen: false, Title: "", Autore: "", Anno: "", Pagine: "" };
     SharepointControls.GetDataFromListByListTitle(contextProps.ListTitle).then((books) => {
       this.setState({ items: books });
     });
@@ -60,10 +64,10 @@ export default class SharepointListWithPnP extends React.Component<ISharepointLi
             closeButtonAriaLabel="Close"
             onRenderFooterContent={this._onRenderFooterContent}
           >
-            <TextField id="Title" label="Title" required />
-            <TextField id="Autore" label="Autore" required />
-            <TextField id="Anno" label="Anno" required />
-            <TextField id="Pagine" label="Pagine" required />
+            <TextField id="Title" label="Title" required onChange={this._getTitolo} />
+            <TextField id="Autore" label="Autore" required onChange={this._getAutore} />
+            <TextField id="Anno" label="Anno" required onChange={this._getAnno} />
+            <TextField id="Pagine" label="Pagine" required onChange={this._getPagine} />
           </Panel>
 
         </div>
@@ -92,31 +96,37 @@ export default class SharepointListWithPnP extends React.Component<ISharepointLi
 
   private _AddNewItem = () => {
 
-    var Titolo = (document.getElementById("Title") as any).value;
-    var Autore = (document.getElementById("Autore") as any).value;
-    var Anno = (document.getElementById("Anno") as any).value;
-    var Pagine = (document.getElementById("Pagine") as any).value;
 
     var book: BookModel = {
-      Titolo: Titolo,
-      Autore: Autore,
-      Anno: Anno,
-      Pagine: Pagine
+      Titolo: this.state.Title,
+      Autore: this.state.Autore,
+      Anno: this.state.Anno,
+      Pagine: this.state.Pagine
     };
 
     SharepointControls.AddItemToListByListTitle(this.props.ListTitle, book).then((result) => {
-      (document.getElementById("Title") as any).value = "";
-      (document.getElementById("Autore") as any).value = "";
-      (document.getElementById("Anno") as any).value = "";
-      (document.getElementById("Pagine") as any).value = "";
+      this.setState({ Title: "" });
+      this.setState({ Autore: "" });
+      this.setState({ Anno: "" });
+      this.setState({ Pagine: "" });
       this._hidePanel();
       alert(result);
+
     });
 
   }
 
 
-
-
-
+  private _getTitolo = (ev: React.FormEvent<HTMLInputElement>, newValue?: string) => {
+    this.setState({ Title: newValue });
+  }
+  private _getAutore = (ev: React.FormEvent<HTMLInputElement>, newValue?: string) => {
+    this.setState({ Autore: newValue });
+  }
+  private _getAnno = (ev: React.FormEvent<HTMLInputElement>, newValue?: string) => {
+    this.setState({ Anno: newValue });
+  }
+  private _getPagine = (ev: React.FormEvent<HTMLInputElement>, newValue?: string) => {
+    this.setState({ Pagine: newValue });
+  }
 }
