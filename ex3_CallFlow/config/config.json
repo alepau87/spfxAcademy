@@ -9,10 +9,19 @@
           "manifest": "./src/extensions/callMsFlow/CallMsFlowCommandSet.manifest.json"
         }
       ]
+    },
+    "request-holidays-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/requestHolidays/RequestHolidaysWebPart.js",
+          "manifest": "./src/webparts/requestHolidays/RequestHolidaysWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "CallMsFlowCommandSetStrings": "lib/extensions/callMsFlow/loc/{locale}.js"
+    "CallMsFlowCommandSetStrings": "lib/extensions/callMsFlow/loc/{locale}.js",
+    "RequestHolidaysWebPartStrings": "lib/webparts/requestHolidays/loc/{locale}.js"
   }
 }
