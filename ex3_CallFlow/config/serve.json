@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://alepau87dev.sharepoint.com/sites/AlessioAcademy/_layouts/workbench.aspx",
       "customActions": {
         "14741713-d0ce-4cb6-94ea-1f83d9f95078": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -16,7 +16,7 @@
       }
     },
     "callMsFlow": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://alepau87dev.sharepoint.com/sites/AlessioAcademy/_layouts/workbench.aspx",
       "customActions": {
         "14741713-d0ce-4cb6-94ea-1f83d9f95078": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -28,7 +28,7 @@
       }
     }
   },
-  "initialPage": "https://localhost:5432/workbench",
+  "initialPage": "https://alepau87dev.sharepoint.com/sites/AlessioAcademy/_layouts/workbench.aspxh",
   "api": {
     "port": 5432,
     "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"

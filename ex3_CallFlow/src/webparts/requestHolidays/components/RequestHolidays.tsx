@@ -23,7 +23,7 @@ export default class RequestHolidays extends React.Component<IRequestHolidaysPro
 
 
   constructor(contextProps: IRequestHolidaysProps) {
-    super(null);
+    super(contextProps);
 
     this.state = { Nome: "", Cognome: "", User: "", Inizio: "", Fine: "" };
 
@@ -40,11 +40,11 @@ export default class RequestHolidays extends React.Component<IRequestHolidaysPro
           <MaskedTextField label="Data Inizio Ferie" mask="99/99/9999" onChange={this._getInizio} />
           <MaskedTextField label="Data Inizio Ferie" mask="99/99/9999" onChange={this._getFine} />
         </div>
-        <div>
+        <div className={styles.divButton}>
           <PrimaryButton
             data-automation-id="submit"
             text="Submit"
-            onClick={this.submitRequest}
+            onClick={() => {this.submitRequest();}}
           />
         </div>
       </div>

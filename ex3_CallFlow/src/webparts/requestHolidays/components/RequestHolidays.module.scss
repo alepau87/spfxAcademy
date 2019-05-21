@@ -13,7 +13,10 @@
     background-color: $ms-color-themeDark;
     padding: 20px;
   }
-
+  .divButton{
+    margin-top: 5%;
+    margin-left: 45%;
+  }
   .column {
     @include ms-Grid-col;
     @include ms-lg10;
